@@ -10,7 +10,7 @@ extern "C"{
     // Menu de intereação com o usuario
     int menuTipoGrafo();
     int menuValorado();
-    LISTA menuVetores();
+    void menuArestas();
 
     // Gerenciador de interface
     void clear();

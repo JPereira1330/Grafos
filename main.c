@@ -11,18 +11,22 @@ int main(int argc, char** argv){
     int valorado;
     LISTA list;
 
+    list = newList();
+
     valorado  = menuValorado();
     tipoGrafo = menuTipoGrafo();
-    list = menuVetores();
-
+    menuArestas();
+    
+    
     LISTA teste = newList();
     add(&teste, "teste");
     add(&teste, "1");
-    add(&teste, "2");
+    addAresta(&teste, "2","Jose", 0);
     add(&teste, "3");
-    add(&teste, "4");
+    addAresta(&teste, "4","Joao", 0);
     add(&teste, "5");
     add(&teste, "6");
     printLista(&teste);
+    
     return 1;
 }

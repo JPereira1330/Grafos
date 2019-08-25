@@ -12,9 +12,12 @@ extern "C"{
 
     // Gerenciamento da lista
     LISTA newList();
+    ARESTA newAresta();
+    VERTICE newVertice();
     void add(LISTA *l, char *nome);
+    void addAresta(LISTA *l, char *nome_a, char *nome_b, int peso);
     void printLista(LISTA *l);
-    
+
 #ifdef __cplusplus
 }
 #endif
