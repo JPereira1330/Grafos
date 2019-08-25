@@ -4,20 +4,21 @@
 int menuTipoGrafo(){
     char op;
 
-    //clear();
+    clear();
     printf(" [ G R A F O S ]\n\n");
     printf(" ~> Tipo de grafo? \n\n");
     printf(" [ 1 ] Grafo orientado. \n");
     printf(" [ 2 ] Grafo nao orientado. \n");
     printf(" [ * ] Opcao: ");
-    limparBuffer();
     scanf("%c", &op);
 
     switch(op){
         case '1':
             return 1;
+            break;
         case '2':
             return 2;
+            break;
     }
 
     return menuTipoGrafo();
@@ -26,28 +27,24 @@ int menuTipoGrafo(){
 int menuValorado(){
     char op;
 
-    //clear();
+    clear();
     printf(" [ G R A F O S ]\n\n");
     printf(" ~> Tipo de grafo? \n\n");
     printf(" [ 1 ] Grafo valorado. \n");
     printf(" [ 2 ] Grafo nao valorado. \n");
     printf(" [ * ] Opcao: ");
-    limparBuffer();
     scanf("%c", &op);
 
     switch(op){
         case '1':
             return 1;
+            break;
         case '2':
             return 2;
+            break;
     }
 
     return menuValorado();
-}
-
-void limparBuffer(){
-    char c;
-    while( (c = fgetc(stdin))!= EOF && c != '\n'){};
 }
 
 void clear(){

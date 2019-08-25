@@ -1,5 +1,5 @@
-#ifndef LIST_H
-#define LIST_H
+#ifndef INTERFACE_H
+#define INTERFACE_H
 
 #ifdef __cplusplus
 extern "C"{
@@ -9,8 +9,8 @@ extern "C"{
     int menuTipoGrafo();
     int menuValorado();
 
+
     // Gerenciador de interface
-    void limparBuffer();
     void clear();
 
 #ifdef __cplusplus
