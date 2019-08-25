@@ -5,10 +5,12 @@
 extern "C"{
 #endif
 
+    #include "list.h"
+
     // Menu de intereação com o usuario
     int menuTipoGrafo();
     int menuValorado();
-
+    LISTA menuVetores();
 
     // Gerenciador de interface
     void clear();

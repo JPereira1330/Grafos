@@ -9,9 +9,11 @@ int main(int argc, char** argv){
     int op = 1;
     int tipoGrafo;
     int valorado;
+    LISTA list;
 
-    //valorado  = menuValorado();
-    //tipoGrafo = menuTipoGrafo();
+    valorado  = menuValorado();
+    tipoGrafo = menuTipoGrafo();
+    list = menuVetores();
 
     LISTA teste = newList();
     add(&teste, "teste");
@@ -22,6 +24,5 @@ int main(int argc, char** argv){
     add(&teste, "5");
     add(&teste, "6");
     printLista(&teste);
-
     return 1;
 }

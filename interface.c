@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "interface.h"
+#include "list.h"
 
 int menuTipoGrafo(){
     char op;
@@ -45,6 +46,11 @@ int menuValorado(){
     }
 
     return menuValorado();
+}
+
+LISTA menuVetores(){
+
+    return NULL;
 }
 
 void clear(){
