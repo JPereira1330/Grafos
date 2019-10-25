@@ -4,63 +4,51 @@ public class main {
 
 	public static void main(String[] args) {
 		
-		Vertice v1 = new Vertice(0,"A");
-		Vertice v2 = new Vertice(0,"B");
-		Vertice v3 = new Vertice(0,"C");
-		Vertice v4 = new Vertice(0,"D");
+		Vertice v1 = new Vertice();
+		Vertice v2 = new Vertice();
+		Vertice v3 = new Vertice();
+		Vertice v4 = new Vertice();
+		Vertice v5 = new Vertice();
 		
-		Aresta a1 = new Aresta(2, v1, v2);
-		Aresta a2 = new Aresta(4, v2, v3);
-		Aresta a3 = new Aresta(1, v2, v4);
-		Aresta a4 = new Aresta(3, v4, v1);
+		Aresta a1 = new Aresta(10, v1, v2);
+		Aresta a2 = new Aresta(15, v2, v3);
+		Aresta a3 = new Aresta(20, v2, v4);
+		Aresta a4 = new Aresta(10, v3, v5);
+
+		ArrayList<Aresta> lista = new ArrayList<Aresta>();
+		lista.add(a1);
+		lista.add(a2);
+		lista.add(a3);
+		lista.add(a4);
 		
-		ArrayList<Aresta> list = new ArrayList<Aresta>();
-		list.add(a1);
-		list.add(a2);
-		list.add(a3);
-		list.add(a4);
-		
-		prim(v1, list);
+		prim(v1, lista);
 	}
 
 	public static void prim(Vertice src, ArrayList<Aresta> arestas) {
 		
+		int min;
 		ArrayList<Vertice> queue = new ArrayList<Vertice>();
 		
-		// Passa todos os valores para infito
+		// Inicializando as distancias como maximo
 		for (int i = 0; i < arestas.size(); i++) {
-			arestas.get(i).getAresta_a().setPeso(Integer.MAX_VALUE);
-			arestas.get(i).getAresta_b().setPeso(Integer.MAX_VALUE);
+			arestas.get(i).getVert_a().setPeso(Integer.MAX_VALUE);
+			arestas.get(i).getVert_b().setPeso(Integer.MAX_VALUE);
 		}
 		
-		// Primeiro vertice atribui como zero
-		for (int i = 0; i < arestas.size(); i++) {
-
-			if(arestas.get(i).getAresta_a().getVertice().equals(src.getVertice())) {
-				arestas.get(i).getAresta_a().setPeso(0);
-			}
-			
-			if(arestas.get(i).getAresta_b().getVertice().equals(src.getVertice())) {
-				arestas.get(i).getAresta_b().setPeso(0);
-			}
-			
-		}
+		min = Integer.MAX_VALUE;
+		src.setPeso(0);
+		queue.add(src);
 		
-		for (int i = 0; i < arestas.size(); i++) {
-			
-			if(arestas.get(i).getAresta_a().getPeso() == 0) {
-				queue.add(arestas.get(i).getAresta_a());
-			}
-			
-			if(arestas.get(i).getAresta_b().getPeso() == 0) {
-				queue.add(arestas.get(i).getAresta_b());
-			}
+		// Motanndo a fila
+		for (int i = 0; i < src.getArestas().size(); i++) {
+			if(min > src.getArestas().get(i).getPeso()) {
+				if(src.getArestas().get(i).getVert_a() == src) {
+					queue.add(src.getArestas().get(i).getVert_b());
+				}else {
+					queue.add(src.getArestas().get(i).getVert_a());
+				}
 
-		}	
-		
-		// Inicializando a fila
-		for (int i = 0; i < queue.size(); i++) {
-
+			}
 		}
 		
 	}

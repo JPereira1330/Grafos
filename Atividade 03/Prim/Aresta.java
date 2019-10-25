@@ -1,13 +1,19 @@
 public class Aresta {
 
-	private int peso;
-	private Vertice aresta_a;
-	private Vertice aresta_b;
+	int peso;
+	Vertice vert_a;
+	Vertice vert_b;
 	
-	public Aresta(int peso, Vertice aresta_a, Vertice aresta_b) {
+	public Aresta() {
+	}
+	
+	public Aresta(int peso, Vertice vert_a, Vertice vert_b) {
+		super();
 		this.peso = peso;
-		this.aresta_a = aresta_a;
-		this.aresta_b = aresta_b;
+		this.vert_a = vert_a;
+		this.vert_b = vert_b;
+		vert_a.arestas.add(this);
+		vert_b.arestas.add(this);
 	}
 	
 	public int getPeso() {
@@ -16,18 +22,17 @@ public class Aresta {
 	public void setPeso(int peso) {
 		this.peso = peso;
 	}
-	public Vertice getAresta_a() {
-		return aresta_a;
+	public Vertice getVert_a() {
+		return vert_a;
 	}
-	public void setAresta_a(Vertice aresta_a) {
-		this.aresta_a = aresta_a;
+	public void setVert_a(Vertice vert_a) {
+		this.vert_a = vert_a;
 	}
-	public Vertice getAresta_b() {
-		return aresta_b;
+	public Vertice getVert_b() {
+		return vert_b;
 	}
-	public void setAresta_b(Vertice aresta_b) {
-		this.aresta_b = aresta_b;
+	public void setVert_b(Vertice vert_b) {
+		this.vert_b = vert_b;
 	}
-		
-	 
+
 }

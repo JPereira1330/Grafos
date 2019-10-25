@@ -1,12 +1,18 @@
+import java.util.ArrayList;
 
 public class Vertice {
 
-	private int peso;
-	private String vertice;
+	int peso;
+	ArrayList<Aresta> arestas;
 	
-	public Vertice(int peso, String vertice) {
+	public Vertice() {
+		arestas = new ArrayList<Aresta>();
+	}
+	
+	public Vertice(int peso, ArrayList<Aresta> arestas) {
+		super();
 		this.peso = peso;
-		this.vertice = vertice;
+		this.arestas = arestas;
 	}
 	
 	public int getPeso() {
@@ -15,11 +21,11 @@ public class Vertice {
 	public void setPeso(int peso) {
 		this.peso = peso;
 	}
-	public String getVertice() {
-		return vertice;
+	public ArrayList<Aresta> getArestas() {
+		return arestas;
 	}
-	public void setVertice(String vertice) {
-		this.vertice = vertice;
+	public void setArestas(ArrayList<Aresta> arestas) {
+		this.arestas = arestas;
 	}
 	
 	
