@@ -43,14 +43,18 @@ public class main {
 		for (int i = 0; i < src.getArestas().size(); i++) {
 			if(min > src.getArestas().get(i).getPeso()) {
 				if(src.getArestas().get(i).getVert_a() == src) {
+					src.getArestas().get(i).getVert_b().setPeso(src.getArestas().get(i).getPeso());
 					queue.add(src.getArestas().get(i).getVert_b());
 				}else {
+					src.getArestas().get(i).getVert_a().setPeso(src.getArestas().get(i).getPeso());
 					queue.add(src.getArestas().get(i).getVert_a());
 				}
-
 			}
 		}
 		
+		for (int i = 0; i < queue.size(); i++) {
+			System.out.println("Fila Pos "+i+": "+queue.get(i).getPeso());		
+		}
 	}
 	
 }
